@@ -64,12 +64,16 @@ kotlin {
             implementation(libs.jetbrains.navigation3.ui)
             implementation(libs.jetbrains.material3.adaptiveNavigation3)
             implementation(libs.jetbrains.lifecycle.viewmodelNavigation3)
+            implementation(libs.kotlinx.coroutines.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
         jsMain.dependencies {
             implementation(libs.wrappers.browser)
+        }
+        webMain.dependencies {
+            implementation(npm("firebase", "10.12.5"))
         }
         getByName("androidDeviceTest").dependencies {
             implementation(libs.androidx.testRunner)

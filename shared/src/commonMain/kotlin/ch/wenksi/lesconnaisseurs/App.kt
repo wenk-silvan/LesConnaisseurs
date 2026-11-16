@@ -11,7 +11,9 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import ch.wenksi.lesconnaisseurs.detail.DetailScreen
+import ch.wenksi.lesconnaisseurs.login.AuthRepository
 import ch.wenksi.lesconnaisseurs.login.LoginScreen
+import ch.wenksi.lesconnaisseurs.login.LoginViewModel
 import ch.wenksi.lesconnaisseurs.map.MapScreen
 import ch.wenksi.lesconnaisseurs.nav.Detail
 import ch.wenksi.lesconnaisseurs.nav.Login
@@ -19,8 +21,9 @@ import ch.wenksi.lesconnaisseurs.nav.Map
 import ch.wenksi.lesconnaisseurs.nav.routeConfig
 
 @Composable
-@Preview
-fun App() {
+fun App(
+    viewModel: LoginViewModel,
+) {
     LesConnaisseursAppTheme {
         val backStack = rememberNavBackStack(routeConfig, Login)
 
@@ -33,8 +36,10 @@ fun App() {
                 entryProvider = entryProvider {
                     entry<Login> {
                         LoginScreen(
-                            onLogin = { _, _ ->
-                                backStack.add(Map)
+                            onLogin = { email, pw ->
+                                viewModel.login(email, pw) {
+                                    backStack.add(Map)
+                                }
                             }
                         )
                     }
