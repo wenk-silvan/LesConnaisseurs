@@ -32,6 +32,7 @@ import ch.wenksi.lesconnaisseurs.venue.nav.routeConfig
 import ch.wenksi.lesconnaisseurs.venue.ranking.RankingScreen
 import ch.wenksi.lesconnaisseurs.venue.rate.RatingScreen
 import ch.wenksi.lesconnaisseurs.venue.rate.RatingViewModel
+import ch.wenksi.lesconnaisseurs.venue.shared.VenueRepository
 
 @Composable
 fun App(

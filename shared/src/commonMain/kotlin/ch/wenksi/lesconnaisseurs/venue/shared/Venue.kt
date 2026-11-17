@@ -9,6 +9,7 @@ import kotlin.time.Clock
 import kotlin.time.Instant
 
 data class Venue(
+    val id: String = "",
     val name: String = "",
     val poi: Poi = Poi(
         id = Random.nextInt().toString(),

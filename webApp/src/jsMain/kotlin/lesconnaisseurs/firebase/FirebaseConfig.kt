@@ -1,5 +1,5 @@
 package lesconnaisseurs.firebase
 
-import SecretFirebaseOptions
+import SecretFirebaseOptionsAsString
 
-fun firebaseOptions(): dynamic = js(SecretFirebaseOptions)
+fun firebaseOptions(): dynamic = js(SecretFirebaseOptionsAsString)
