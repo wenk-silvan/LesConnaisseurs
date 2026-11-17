@@ -189,6 +189,7 @@ fun LesConnaisseursAppTheme(
     MaterialTheme(
         colorScheme = DarkColorScheme,
         typography = appTypography,
+        shapes = AppShapes,
         content = content
     )
 }

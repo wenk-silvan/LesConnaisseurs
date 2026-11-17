@@ -9,7 +9,8 @@ fun main() {
     ComposeViewport {
         val container = AppContainer()
         App(
-            container.loginViewModel
+            container.loginViewModel,
+            container.ratingViewModel,
         )
     }
 }

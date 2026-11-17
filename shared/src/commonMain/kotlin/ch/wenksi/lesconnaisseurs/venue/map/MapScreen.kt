@@ -1,9 +1,9 @@
-package ch.wenksi.lesconnaisseurs.detail
+package ch.wenksi.lesconnaisseurs.venue.map
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun DetailScreen() {
-    Text("DetailScreen")
+fun MapScreen() {
+    Text("MapScreen")
 }

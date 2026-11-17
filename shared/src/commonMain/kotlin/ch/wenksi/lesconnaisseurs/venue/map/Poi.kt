@@ -1,4 +1,4 @@
-package ch.wenksi.lesconnaisseurs
+package ch.wenksi.lesconnaisseurs.venue.map
 
 data class Poi(
     val id: String,
