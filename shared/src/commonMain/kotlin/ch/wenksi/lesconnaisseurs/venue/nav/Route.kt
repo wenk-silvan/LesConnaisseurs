@@ -18,7 +18,7 @@ data object Map : Route
 data object Rating : Route
 
 @Serializable
-data object Ranking : Route
+data object Leaderboard : Route
 
 @Serializable
 data class Detail(val id: String) : Route
@@ -28,7 +28,7 @@ val routeConfig = SavedStateConfiguration {
         polymorphic(NavKey::class) {
             subclass(Login::class, Login.serializer())
             subclass(Rating::class, Rating.serializer())
-            subclass(Ranking::class, Ranking.serializer())
+            subclass(Leaderboard::class, Leaderboard.serializer())
             subclass(Detail::class, Detail.serializer())
             subclass(Map::class, Map.serializer())
         }

@@ -11,6 +11,7 @@ fun main() {
         App(
             container.loginViewModel,
             container.ratingViewModel,
+            container.leaderboardViewModel,
         )
     }
 }

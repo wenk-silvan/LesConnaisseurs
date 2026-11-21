@@ -25,7 +25,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import ch.wenksi.lesconnaisseurs.venue.shared.Logo
+import ch.wenksi.lesconnaisseurs.venue.shared.Header
 
 @Composable
 fun LoginScreen(
@@ -39,8 +39,8 @@ fun LoginScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Logo()
-        Spacer(Modifier.height(24.dp))
+        Header()
+
         TextField(
             value = uiState.email,
             onValueChange = onEmailChanged,

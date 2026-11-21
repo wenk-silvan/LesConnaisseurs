@@ -27,6 +27,7 @@ kotlin {
 
         jsMain.dependencies {
             implementation(libs.firebase.firestore)
+            implementation(npm("@js-joda/timezone", "3.2.1"))
         }
     }
 }

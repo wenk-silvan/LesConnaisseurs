@@ -170,6 +170,13 @@ fun LesConnaisseursAppTheme(
             lineHeight = 20.sp,
             letterSpacing = 0.01.em
         ),
+        labelLarge = TextStyle(
+            fontFamily = PlusJakartaSans,
+            fontSize = 17.sp,
+            fontWeight = FontWeight.SemiBold,
+            lineHeight = 16.sp,
+            letterSpacing = 0.12.em
+        ),
         labelMedium = TextStyle(
             fontFamily = PlusJakartaSans,
             fontSize = 11.sp,
