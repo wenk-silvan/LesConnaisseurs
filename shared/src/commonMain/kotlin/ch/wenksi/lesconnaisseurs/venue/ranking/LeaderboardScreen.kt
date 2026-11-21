@@ -1,14 +1,25 @@
 package ch.wenksi.lesconnaisseurs.venue.ranking
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AttachMoney
+import androidx.compose.material.icons.outlined.Attachment
+import androidx.compose.material.icons.outlined.EmojiPeople
+import androidx.compose.material.icons.outlined.Light
+import androidx.compose.material.icons.outlined.LocationOn
+import androidx.compose.material.icons.outlined.Restaurant
+import androidx.compose.material.icons.outlined.Restore
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +29,8 @@ import androidx.compose.ui.tooling.preview.AndroidUiModes.UI_MODE_NIGHT_YES
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.wenksi.lesconnaisseurs.LesConnaisseursAppTheme
+import ch.wenksi.lesconnaisseurs.venue.shared.Criteria
+import ch.wenksi.lesconnaisseurs.venue.shared.CriteriaType
 import ch.wenksi.lesconnaisseurs.venue.shared.FakeVenueUiState
 import ch.wenksi.lesconnaisseurs.venue.shared.Header
 import ch.wenksi.lesconnaisseurs.venue.shared.PanelCard
@@ -60,6 +73,10 @@ private fun RankedVenue(venue: VenueUiState, modifier: Modifier = Modifier) {
                     Text(venue.readableDate, style = MaterialTheme.typography.labelSmall)
                 }
                 Spacer(Modifier.weight(1f))
+                venue.criteria.forEach {
+                    Criteria(it, modifier = Modifier.padding(horizontal = 8.dp))
+                }
+                Spacer(Modifier.weight(1f))
                 Text(
                     "${venue.overallScore}",
                     style = MaterialTheme.typography.headlineMedium,
@@ -72,6 +89,30 @@ private fun RankedVenue(venue: VenueUiState, modifier: Modifier = Modifier) {
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun Criteria(criteria: Criteria, modifier: Modifier = Modifier) {
+    Column(
+        modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        val icon = when (criteria.type) {
+            CriteriaType.LOCATION -> Icons.Outlined.LocationOn
+            CriteriaType.AMBIENCE -> Icons.Outlined.Light
+            CriteriaType.SERVICE -> Icons.Outlined.EmojiPeople
+            CriteriaType.CUISINE -> Icons.Outlined.Restaurant
+            CriteriaType.PRICE -> Icons.Outlined.AttachMoney
+        }
+        Icon(imageVector = icon, contentDescription = criteria.name)
+        Spacer(Modifier.height(4.dp))
+        Text(
+            criteria.score.toString(),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
     }
 }
 

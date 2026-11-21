@@ -172,7 +172,7 @@ private fun CriteriaRow(
                     value = criteria.score.toFloat(),
                     onValueChange = { onScoreChange(it.toInt()) },
                     valueRange = 1f..20f,
-                    steps = 18
+                    steps = 20,
                 )
             }
         }
