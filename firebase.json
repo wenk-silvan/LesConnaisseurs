@@ -6,7 +6,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "webApp/build/dist/wasmJs/productionExecutable",
+    "public": "webApp/build/dist/js/productionExecutable",
     "ignore": [
       "firebase.json",
       "**/.*",
